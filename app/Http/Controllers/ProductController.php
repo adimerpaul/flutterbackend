@@ -12,6 +12,9 @@ class ProductController extends Controller{
     function store(Request $request){
         return Product::create($request->all());
     }
+    function show(Product $product){
+        return $product;
+    }
     function update(Request $request, Product $product){
         $product->update($request->all());
         return $product;
