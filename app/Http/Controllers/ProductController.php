@@ -10,6 +10,9 @@ class ProductController extends Controller{
         return Product::all();
     }
     function store(Request $request){
+        $validatedData = $request->validate([
+            'name' => 'required',
+        ]);
         return Product::create($request->all());
     }
     function show(Product $product){
